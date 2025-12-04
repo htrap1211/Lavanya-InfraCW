@@ -1,0 +1,902 @@
+// Apple-inspired Design System
+// Modern, clean, and sophisticated styling
+
+// 1. Include functions first
+@import "bootstrap/scss/functions";
+
+// 2. Apple-inspired color palette
+$primary: #007AFF;
+$secondary: #8E8E93;
+$success: #30D158;
+$info: #64D2FF;
+$warning: #FF9F0A;
+$danger: #FF3B30;
+$light: #F2F2F7;
+$dark: #1C1C1E;
+
+// 3. Include remainder of required Bootstrap stylesheets
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/variables-dark";
+@import "bootstrap/scss/maps";
+@import "bootstrap/scss/mixins";
+@import "bootstrap/scss/root";
+
+// 4. Optionally include any other parts as needed
+@import "bootstrap/scss/utilities";
+@import "bootstrap/scss/reboot";
+@import "bootstrap/scss/type";
+@import "bootstrap/scss/containers";
+@import "bootstrap/scss/grid";
+@import "bootstrap/scss/buttons";
+@import "bootstrap/scss/transitions";
+@import "bootstrap/scss/utilities/api";
+
+// Bootstrap Button Override for Pill Shape
+.btn {
+  border-radius: 999px !important;
+}
+
+// 5. Apple-inspired Design System Variables
+:root {
+  // Apple Typography System
+  --font-sans: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --font-display: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --font-text: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  
+  // Apple Color System - Light Theme
+  --primary-color: #007AFF;
+  --primary-color-dark: #0056CC;
+  --primary-color-light: #4DA6FF;
+  
+  --secondary-color: #8E8E93;
+  --secondary-color-dark: #636366;
+  --secondary-color-light: #AEAEB2;
+  
+  --background-color: #FFFFFF;
+  --background-secondary: #F2F2F7;
+  --background-tertiary: #FFFFFF;
+  
+  --card-bg: #FFFFFF;
+  --card-bg-secondary: #F2F2F7;
+  
+  --header-bg: rgba(255, 255, 255, 0.8);
+  --header-bg-blur: rgba(255, 255, 255, 0.95);
+  
+  --border-color: #D1D1D6;
+  --border-color-light: #E5E5EA;
+  --border-color-dark: #C7C7CC;
+  
+  --text-primary: #1C1C1E;
+  --text-secondary: #3A3A3C;
+  --text-tertiary: #8E8E93;
+  --text-quaternary: #C7C7CC;
+  
+  --shadow-light: 0 1px 3px rgba(0, 0, 0, 0.1);
+  --shadow-medium: 0 4px 12px rgba(0, 0, 0, 0.15);
+  --shadow-heavy: 0 8px 24px rgba(0, 0, 0, 0.2);
+  
+  --blur-backdrop: blur(20px);
+  --blur-backdrop-light: blur(10px);
+  
+  // Accent Colors
+  --accent-blue: #007AFF;
+  --accent-green: #30D158;
+  --accent-orange: #FF9F0A;
+  --accent-purple: #AF52DE;
+  --accent-red: #FF3B30;
+  --accent-yellow: #FFD60A;
+  --accent-pink: #FF2D92;
+  --accent-teal: #64D2FF;
+}
+
+// Dark Theme
+[data-theme="dark"] {
+  --background-color: #000000;
+  --background-secondary: #1C1C1E;
+  --background-tertiary: #2C2C2E;
+  
+  --card-bg: #1C1C1E;
+  --card-bg-secondary: #2C2C2E;
+  
+  --header-bg: rgba(0, 0, 0, 0.8);
+  --header-bg-blur: rgba(0, 0, 0, 0.95);
+  
+  --border-color: #38383A;
+  --border-color-light: #2C2C2E;
+  --border-color-dark: #48484A;
+  
+  --text-primary: #FFFFFF;
+  --text-secondary: #EBEBF5;
+  --text-tertiary: #8E8E93;
+  --text-quaternary: #636366;
+  
+  --shadow-light: 0 1px 3px rgba(0, 0, 0, 0.3);
+  --shadow-medium: 0 4px 12px rgba(0, 0, 0, 0.4);
+  --shadow-heavy: 0 8px 24px rgba(0, 0, 0, 0.5);
+}
+
+// Apple-inspired Global Styles
+body {
+  background-color: var(--background-color);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  font-family: var(--font-text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  margin: 0;
+  padding: 0;
+  line-height: 1.47;
+  font-size: 17px;
+  font-weight: 400;
+  letter-spacing: -0.022em;
+}
+
+// Apple Typography System
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-family: var(--font-display);
+  font-weight: 600;
+  line-height: 1.1;
+  color: var(--text-primary);
+  letter-spacing: -0.022em;
+}
+
+h1 {
+  font-size: 56px;
+  font-weight: 600;
+  line-height: 1.07;
+  letter-spacing: -0.005em;
+  
+  @media (max-width: 1068px) {
+    font-size: 48px;
+  }
+  
+  @media (max-width: 734px) {
+    font-size: 40px;
+  }
+}
+
+h2 {
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 1.08;
+  letter-spacing: -0.003em;
+  
+  @media (max-width: 1068px) {
+    font-size: 40px;
+  }
+  
+  @media (max-width: 734px) {
+    font-size: 32px;
+  }
+}
+
+h3 {
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 1.13;
+  letter-spacing: 0.004em;
+  
+  @media (max-width: 1068px) {
+    font-size: 28px;
+  }
+  
+  @media (max-width: 734px) {
+    font-size: 24px;
+  }
+}
+
+h4 {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.17;
+  letter-spacing: 0.007em;
+  
+  @media (max-width: 734px) {
+    font-size: 20px;
+  }
+}
+
+h5 {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: 0.011em;
+}
+
+h6 {
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1.24;
+  letter-spacing: -0.022em;
+}
+
+// Body text
+p, li, a, button, input, textarea, select, label, span {
+  font-family: var(--font-text);
+  line-height: 1.47;
+  color: var(--text-primary);
+  font-size: 17px;
+  font-weight: 400;
+  letter-spacing: -0.022em;
+}
+
+// Large text
+.large-text {
+  font-size: 21px;
+  line-height: 1.38;
+  letter-spacing: 0.011em;
+}
+
+// Small text
+.small-text {
+  font-size: 15px;
+  line-height: 1.47;
+  letter-spacing: -0.024em;
+}
+
+// Caption text
+.caption-text {
+  font-size: 13px;
+  line-height: 1.38;
+  letter-spacing: -0.08em;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+// Apple-inspired Section Styling
+section {
+  padding: 80px 0;
+  position: relative;
+  overflow: hidden;
+  
+  @media (max-width: 1068px) {
+    padding: 60px 0;
+  }
+  
+  @media (max-width: 734px) {
+    padding: 48px 0;
+  }
+  
+  @media (max-width: 430px) {
+    padding: 40px 0;
+  }
+  
+  // Section backgrounds
+  &.section-white {
+    background: linear-gradient(180deg, #F2F2F0 0%, #E0E0E0 100%);
+  }
+  
+  &.section-gray {
+    background: linear-gradient(180deg, #E0E0E0 0%, #d4d4d4 100%);
+    position: relative;
+    
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: 
+        radial-gradient(circle at 10% 20%, rgba(215, 199, 163, 0.08), transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(17, 17, 17, 0.03), transparent 40%);
+      pointer-events: none;
+    }
+  }
+  
+  &.section-black {
+    background-color: var(--text-primary);
+    color: var(--background-color);
+    
+    h1, h2, h3, h4, h5, h6 {
+      color: var(--background-color);
+    }
+    
+    p, li {
+      color: rgba(255, 255, 255, 0.8);
+    }
+    
+    .text-muted {
+      color: rgba(255, 255, 255, 0.6) !important;
+    }
+  }
+  
+  // Section header
+  .section-header {
+    text-align: center;
+    margin-bottom: 60px;
+    
+    @media (max-width: 1068px) {
+      margin-bottom: 50px;
+    }
+    
+    @media (max-width: 734px) {
+      margin-bottom: 40px;
+    }
+    
+    .section-title {
+      margin-bottom: 16px;
+    }
+    
+    .section-subtitle {
+      font-size: 21px;
+      line-height: 1.38;
+      color: var(--text-secondary);
+      max-width: 600px;
+      margin: 0 auto;
+      font-weight: 400;
+      
+      @media (max-width: 1068px) {
+        font-size: 19px;
+      }
+      
+      @media (max-width: 734px) {
+        font-size: 17px;
+      }
+    }
+  }
+}
+
+// Modern 3D Button System
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 32px;
+  border-radius: 999px !important;
+  font-family: var(--font-text);
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1.47;
+  letter-spacing: -0.022em;
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  cursor: pointer;
+  border: none;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  transform-style: preserve-3d;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  &:hover::before {
+    opacity: 1;
+  }
+  
+  &:hover, &:focus, &:active {
+    text-decoration: none;
+  }
+  
+  // Primary Button (Luxury Earth Beige)
+  &-primary {
+    background: linear-gradient(135deg, #D7C7A3 0%, #c4b08f 100%);
+    color: #111111;
+    font-weight: 600;
+    
+    &:hover {
+      transform: translateY(-3px) scale(1.05);
+      box-shadow: 0 15px 40px rgba(215, 199, 163, 0.4);
+      background: linear-gradient(135deg, #e0d4b5 0%, #D7C7A3 100%);
+    }
+    
+    &:active {
+      transform: translateY(-1px) scale(1.02);
+    }
+  }
+  
+  // Secondary Button (Gray)
+  &-secondary {
+    background: linear-gradient(135deg, #8E8E93 0%, #636366 100%);
+    color: white;
+    
+    &:hover {
+      transform: translateY(-3px) scale(1.05);
+      box-shadow: 0 15px 40px rgba(142, 142, 147, 0.4);
+    }
+  }
+  
+  // Outline Button
+  &-outline {
+    background: rgba(242, 242, 240, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 2px solid #D7C7A3;
+    color: #F2F2F0;
+    font-weight: 600;
+    
+    &:hover {
+      background: #D7C7A3;
+      border-color: #D7C7A3;
+      color: #111111;
+      transform: translateY(-3px) scale(1.05);
+      box-shadow: 0 15px 40px rgba(215, 199, 163, 0.4);
+    }
+    
+    &:active {
+      transform: translateY(-1px) scale(1.02);
+    }
+  }
+  
+  // Large Button
+  &-lg {
+    padding: 18px 40px;
+    font-size: 19px;
+    line-height: 1.37;
+  }
+  
+  // Small Button
+  &-sm {
+    padding: 10px 20px;
+    font-size: 15px;
+    line-height: 1.47;
+  }
+}
+
+// Modern 3D Card System
+.card {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 24px;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  position: relative;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(215, 199, 163, 0.08) 0%, rgba(17, 17, 17, 0.03) 100%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: 0;
+  }
+  
+  &:hover {
+    transform: translateY(-15px) rotateX(5deg) scale(1.02);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2);
+    border-color: rgba(255, 255, 255, 0.5);
+  }
+  
+  &:hover::before {
+    opacity: 1;
+  }
+  
+  .card-body {
+    padding: 32px;
+    position: relative;
+    z-index: 1;
+    
+    @media (max-width: 734px) {
+      padding: 24px;
+    }
+    
+    @media (max-width: 430px) {
+      padding: 20px;
+    }
+  }
+  
+  .card-title {
+    color: var(--text-primary);
+    margin-bottom: 12px;
+    font-weight: 700;
+  }
+  
+  .card-text {
+    color: var(--text-secondary);
+  }
+  
+  // Mobile optimizations
+  @media (max-width: 734px) {
+    border-radius: 20px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    
+    &:hover {
+      transform: translateY(-8px) scale(1.01);
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+    }
+  }
+}
+
+// Apple-inspired Form Controls
+.form-control, .form-select {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  padding: 12px 16px;
+  border-radius: 12px;
+  font-family: var(--font-text);
+  font-size: 17px;
+  line-height: 1.47;
+  
+  &:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 4px rgba(0, 122, 255, 0.1);
+    outline: none;
+  }
+  
+  &::placeholder {
+    color: var(--text-tertiary);
+  }
+}
+
+.form-label {
+  font-weight: 400;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+  font-size: 17px;
+}
+
+// Utility Classes
+.text-muted {
+  color: var(--text-tertiary) !important;
+}
+
+.bg-light {
+  background-color: var(--background-secondary) !important;
+}
+
+.border {
+  border-color: var(--border-color) !important;
+}
+
+// Container
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  
+  @media (min-width: 1440px) {
+    max-width: 1320px;
+  }
+  
+  @media (max-width: 1068px) {
+    padding: 0 24px;
+  }
+  
+  @media (max-width: 734px) {
+    padding: 0 24px;
+  }
+  
+  // iPhone-specific optimizations - more breathing room
+  @media (max-width: 430px) {
+    padding: 0 20px;
+  }
+  
+  @media (max-width: 393px) {
+    padding: 0 20px;
+  }
+  
+  @media (max-width: 360px) {
+    padding: 0 18px;
+  }
+}
+
+// iPhone-specific responsive breakpoints
+// iPhone 16/15/14 Pro Max: 430px × 932px
+@media (max-width: 430px) {
+  body {
+    font-size: 16px;
+  }
+  
+  h1 {
+    font-size: 36px;
+    line-height: 1.1;
+  }
+  
+  h2 {
+    font-size: 28px;
+    line-height: 1.15;
+  }
+  
+  h3 {
+    font-size: 22px;
+    line-height: 1.2;
+  }
+  
+  .btn {
+    font-size: 16px;
+    padding: 12px 24px;
+    
+    &-lg {
+      font-size: 17px;
+      padding: 16px 32px;
+    }
+  }
+  
+  section {
+    padding: 40px 0;
+    
+    .section-header {
+      margin-bottom: 36px;
+      
+      .section-subtitle {
+        font-size: 16px;
+        line-height: 1.5;
+      }
+    }
+  }
+  
+  .card {
+    border-radius: 20px;
+    margin-bottom: 20px;
+  }
+}
+
+// iPhone 16/15/14 Pro: 393px × 852px
+@media (max-width: 393px) {
+  body {
+    font-size: 15px;
+  }
+  
+  h1 {
+    font-size: 32px;
+    line-height: 1.1;
+  }
+  
+  h2 {
+    font-size: 26px;
+    line-height: 1.15;
+  }
+  
+  h3 {
+    font-size: 20px;
+    line-height: 1.2;
+  }
+  
+  .btn {
+    font-size: 15px;
+    padding: 12px 24px;
+    
+    &-lg {
+      font-size: 16px;
+      padding: 15px 30px;
+    }
+  }
+  
+  section {
+    padding: 36px 0;
+    
+    .section-header {
+      margin-bottom: 32px;
+      
+      .section-subtitle {
+        font-size: 15px;
+        line-height: 1.5;
+      }
+    }
+  }
+  
+  .card {
+    border-radius: 18px;
+  }
+}
+
+// iPhone SE and smaller: 360px × 640px
+@media (max-width: 360px) {
+  body {
+    font-size: 14px;
+  }
+  
+  h1 {
+    font-size: 28px;
+    line-height: 1.1;
+  }
+  
+  h2 {
+    font-size: 24px;
+    line-height: 1.15;
+  }
+  
+  h3 {
+    font-size: 18px;
+    line-height: 1.2;
+  }
+  
+  .btn {
+    font-size: 14px;
+    padding: 12px 24px;
+    
+    &-lg {
+      font-size: 15px;
+      padding: 14px 28px;
+    }
+  }
+  
+  section {
+    padding: 32px 0;
+    
+    .section-header {
+      margin-bottom: 28px;
+      
+      .section-subtitle {
+        font-size: 14px;
+        line-height: 1.5;
+      }
+    }
+  }
+  
+  .card {
+    border-radius: 16px;
+  }
+}
+
+// iPhone landscape optimizations
+@media (max-width: 932px) and (orientation: landscape) {
+  section {
+    padding: 24px 0;
+  }
+  
+  .section-header {
+    margin-bottom: 24px;
+  }
+}
+
+// High DPI iPhone optimizations
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+  
+  // Ensure crisp borders and shadows
+  .card, .btn, .form-control {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+}
+
+// Global animation keyframes
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+// Global mobile spacing improvements
+@media (max-width: 734px) {
+  // Improve touch targets
+  a, button, .btn {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  // Softer shadows on mobile for depth without heaviness
+  .card,
+  .stat-item,
+  .project-card,
+  .info-item,
+  .feature-item {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06) !important;
+    transition: all 0.3s ease;
+  }
+  
+  // More rounded corners for friendlier, modern feel
+  .btn {
+    border-radius: 20px !important;
+  }
+  
+  .form-control {
+    border-radius: 18px !important;
+  }
+  
+  .card {
+    border-radius: 24px !important;
+  }
+  
+  img {
+    border-radius: 20px !important;
+  }
+  
+  // Better section spacing
+  section {
+    .section-header {
+      padding: 0 8px;
+      
+      .section-title {
+        margin-bottom: 20px;
+      }
+      
+      .section-subtitle {
+        line-height: 1.6;
+        padding: 0 4px;
+      }
+    }
+  }
+  
+  // Improved button hover states for mobile
+  .btn:active {
+    transform: scale(0.98);
+  }
+  
+  // Better spacing for form elements
+  .form-group {
+    margin-bottom: 24px;
+  }
+  
+  // Optimize text readability
+  p, li {
+    line-height: 1.65;
+  }
+  
+  // Add subtle animations for better UX
+  .stat-item,
+  .feature-item,
+  .info-item,
+  .project-card {
+    &:active {
+      transform: scale(0.98);
+    }
+  }
+}

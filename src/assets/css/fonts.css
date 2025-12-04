@@ -1,0 +1,7 @@
+@font-face {
+  font-family: 'NothingFont';
+  src: url('../fonts/nothing-font-5x7.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}

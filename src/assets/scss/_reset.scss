@@ -1,0 +1,71 @@
+/* Reset and normalize styles */
+
+/* Remove all default list styles */
+ul, ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Remove default link styles */
+a {
+  text-decoration: none;
+  color: inherit;
+  
+  &:hover, &:focus, &:active {
+    text-decoration: none;
+    outline: none !important;
+    box-shadow: none !important;
+  }
+}
+
+/* Remove all pseudo-elements from links */
+a::before,
+a::after,
+a *::before,
+a *::after {
+  display: none !important;
+  content: none !important;
+  background: none !important;
+  box-shadow: none !important;
+}
+
+/* Reset button styles */
+button, 
+input[type="button"], 
+input[type="submit"], 
+input[type="reset"] {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  outline: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  
+  &::before,
+  &::after {
+    display: none !important;
+    content: none !important;
+  }
+}
+
+/* Remove focus outlines (we'll add our own focus styles) */
+*:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* Remove all animations and transitions for users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

@@ -57,10 +57,4 @@ This project is currently under active development. For development setup and co
 
 ---
 
-## Contact
-
-For inquiries regarding this project, please contact the development team or Lavanya Infrastructure Corporation directly.
-
----
-
 **© 2024 Lavanya Infrastructure Corporation. All rights reserved.**

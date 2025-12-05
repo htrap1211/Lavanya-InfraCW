@@ -57,4 +57,4 @@ This project is currently under active development. For development setup and co
 
 ---
 
-**© 2024 Lavanya Infrastructure Corporation. All rights reserved.**
+**© 2025 Lavanya Infrastructure Corporation. All rights reserved.**

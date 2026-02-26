@@ -17,6 +17,6 @@ window.addEventListener('load', () => {
       preloader.style.opacity = '0'
       preloader.style.pointerEvents = 'none'
       setTimeout(() => preloader.remove(), 500)
-    }, 400)
+    }, 2000)
   }
 })

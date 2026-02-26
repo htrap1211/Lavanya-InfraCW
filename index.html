@@ -55,6 +55,9 @@
         mask-repeat: no-repeat;
         -webkit-mask-position: center;
         mask-position: center;
+        /* Correctly treats black as opaque and white as transparent */
+        mask-mode: luminance;
+        -webkit-mask-source-type: luminance;
         margin: 0 auto;
         opacity: 0.9;
       "></div>

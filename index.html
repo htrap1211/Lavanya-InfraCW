@@ -50,11 +50,11 @@
 
       <div style="position:relative; z-index:1;">
         <div
-          style="font-family:'DM Serif Display', serif; font-size:42px; color:#ffffff; letter-spacing:0.1em; overflow:hidden; border-right: 2px solid rgba(192,192,192,0.5); white-space: nowrap; margin: 0 auto; animation: typing 3s steps(7, end) forwards, blink-caret 0.75s step-end infinite;">
+          style="font-family:'DM Serif Display', serif; font-size:42px; color:#ffffff; white-space: nowrap; margin: 0 auto; opacity:0; filter:blur(10px); animation: cinematic-reveal 3s cubic-bezier(0.16, 1, 0.3, 1) 0.5s forwards;">
           LAVANYA
         </div>
         <div
-          style="font-family:'DM Sans', sans-serif; font-size:10px; color:rgba(192,192,192,0.6); letter-spacing:0.8em; margin-top:12px; opacity:0; animation: tracking-in 3.5s cubic-bezier(0.16, 1, 0.3, 1) 1.5s forwards;">
+          style="font-family:'DM Sans', sans-serif; font-size:10px; color:rgba(192,192,192,0.6); margin-top:12px; opacity:0; animation: cinematic-sub-reveal 2.5s cubic-bezier(0.16, 1, 0.3, 1) 1.5s forwards;">
           INFRASTRUCTURE
         </div>
       </div>
@@ -77,57 +77,37 @@
       }
     }
 
-    @keyframes typing {
-      from {
-        width: 0
+    @keyframes cinematic-reveal {
+      0% {
+        opacity: 0;
+        filter: blur(10px);
+        letter-spacing: -0.2em;
+        transform: scale(0.9);
       }
 
-      to {
-        width: 100%
-      }
-    }
-
-    @keyframes blink-caret {
-
-      from,
-      to {
-        border-color: transparent
-      }
-
-      50% {
-        border-color: rgba(192, 192, 192, 0.5)
+      30% {
+        opacity: 1;
       }
 
       100% {
-        border-color: transparent;
-        border-right: none;
+        opacity: 1;
+        filter: blur(0);
+        letter-spacing: 0.2em;
+        transform: scale(1);
       }
     }
 
-    @keyframes tracking-in {
+    @keyframes cinematic-sub-reveal {
       0% {
         opacity: 0;
         letter-spacing: 0.2em;
-        transform: translateY(5px);
+        transform: translateY(10px);
       }
 
       100% {
         opacity: 1;
         letter-spacing: 0.8em;
         transform: translateY(0);
-      }
-    }
-
-    /* Stop caret blinking after typing */
-    @keyframes blink-caret {
-
-      0%,
-      90% {
-        border-right: 2px solid rgba(192, 192, 192, 0.5);
-      }
-
-      100% {
-        border-right: none;
       }
     }
   </style>

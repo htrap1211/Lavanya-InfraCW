@@ -41,25 +41,93 @@
 <body>
   <!-- Preloader -->
   <div id="preloader"
-    style="position:fixed;inset:0;z-index:9999;background:#111111;display:flex;align-items:center;justify-content:center;transition:opacity 0.5s ease;">
-    <div style="text-align:center;">
+    style="position:fixed;inset:0;z-index:9999;background:#0a0a0a;display:flex;align-items:center;justify-content:center;transition:opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1);overflow:hidden;">
+    <div style="text-align:center; position:relative;">
+      <!-- Architectural Line -->
       <div
-        style="width:40px;height:2px;background:linear-gradient(90deg,transparent,#C0C0C0,transparent);margin:0 auto;animation:pulse-loader 1.5s ease-in-out infinite;">
+        style="position:absolute; top:50%; left:50%; width:200vw; height:1px; background:linear-gradient(90deg,transparent,rgba(192,192,192,0.2),transparent); transform:translate(-50%, -50%); animation: blueprint-line 2.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;">
+      </div>
+
+      <div style="position:relative; z-index:1;">
+        <div
+          style="font-family:'DM Serif Display', serif; font-size:42px; color:#ffffff; letter-spacing:0.1em; overflow:hidden; border-right: 2px solid rgba(192,192,192,0.5); white-space: nowrap; margin: 0 auto; animation: typing 1.5s steps(7, end) forwards, blink-caret 0.75s step-end infinite;">
+          LAVANYA
+        </div>
+        <div
+          style="font-family:'DM Sans', sans-serif; font-size:10px; color:rgba(192,192,192,0.6); letter-spacing:0.8em; margin-top:12px; opacity:0; animation: tracking-in 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.8s forwards;">
+          INFRASTRUCTURE
+        </div>
       </div>
     </div>
   </div>
   <style>
-    @keyframes pulse-loader {
-
-      0%,
-      100% {
-        opacity: 0.3;
-        width: 40px;
+    @keyframes blueprint-line {
+      0% {
+        width: 0;
+        opacity: 0;
       }
 
       50% {
         opacity: 1;
-        width: 80px;
+      }
+
+      100% {
+        width: 200vw;
+        opacity: 0.1;
+      }
+    }
+
+    @keyframes typing {
+      from {
+        width: 0
+      }
+
+      to {
+        width: 100%
+      }
+    }
+
+    @keyframes blink-caret {
+
+      from,
+      to {
+        border-color: transparent
+      }
+
+      50% {
+        border-color: rgba(192, 192, 192, 0.5)
+      }
+
+      100% {
+        border-color: transparent;
+        border-right: none;
+      }
+    }
+
+    @keyframes tracking-in {
+      0% {
+        opacity: 0;
+        letter-spacing: 0.2em;
+        transform: translateY(5px);
+      }
+
+      100% {
+        opacity: 1;
+        letter-spacing: 0.8em;
+        transform: translateY(0);
+      }
+    }
+
+    /* Stop caret blinking after typing */
+    @keyframes blink-caret {
+
+      0%,
+      90% {
+        border-right: 2px solid rgba(192, 192, 192, 0.5);
+      }
+
+      100% {
+        border-right: none;
       }
     }
   </style>

@@ -4,6 +4,50 @@
 
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display:ital@0;1&display=swap');
 
+/* ═══════════════════════════════════════════════════════
+   DESIGN TOKENS — CSS Custom Properties
+   ═══════════════════════════════════════════════════════ */
+:root {
+  /* Colors */
+  --color-bg-dark: #0f0f0f;
+  --color-bg-dark-2: #111111;
+  --color-bg-light: #F5F5F5;
+  --color-white: #ffffff;
+  --color-black: #111111;
+  --color-silver: #C0C0C0;
+  --color-silver-dim: rgba(192, 192, 192, 0.7);
+  --color-silver-faint: rgba(192, 192, 192, 0.1);
+  --color-silver-border: rgba(192, 192, 192, 0.08);
+  --color-text-muted: #6B6B6B;
+  --color-text-label: #888888;
+  --color-whatsapp: #25D366;
+
+  /* Gradients */
+  --gradient-dark: linear-gradient(160deg, #0f0f0f 0%, #111111 100%);
+  --gradient-silver-line: linear-gradient(90deg, #C0C0C0, transparent);
+
+  /* Typography */
+  --font-serif: 'DM Serif Display', serif;
+  --font-sans: 'DM Sans', sans-serif;
+
+  /* Spacing */
+  --section-padding-mobile: 64px 28px;
+  --section-padding-tablet: 80px 64px;
+  --section-padding-desktop: 100px 100px;
+
+  /* Animation */
+  --transition-fast: 0.2s ease;
+  --transition-base: 0.35s ease;
+  --transition-slow: 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  --easing-spring: cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* Border radius */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-pill: 999px;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -139,6 +183,111 @@ html {
 /* Reset default button styles for links */
 button {
   font-family: inherit;
+}
+
+/* ── Hero: Ken Burns slow zoom on background image ── */
+@keyframes kenBurns {
+  from { transform: scale(1) translateZ(0); }
+  to   { transform: scale(1.08) translateZ(0); }
+}
+
+.hero-bg-img {
+  animation: kenBurns 16s ease-in-out infinite alternate;
+  will-change: transform;
+}
+
+/* ── Hero CTA button: shimmer on hover ── */
+.hero-cta {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-cta::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(105deg, transparent 40%, rgba(255,255,255,0.35) 50%, transparent 60%);
+  background-size: 200% 100%;
+  background-position: -200% center;
+  transition: none;
+}
+
+.hero-cta:hover::after {
+  animation: btnShimmer 0.55s ease forwards;
+}
+
+@keyframes btnShimmer {
+  from { background-position: -200% center; }
+  to   { background-position: 200% center; }
+}
+
+/* ── Hero scroll indicator ── */
+@keyframes scrollBounce {
+  0%, 100% { opacity: 0.35; transform: translateY(0); }
+  50%       { opacity: 0.8;  transform: translateY(6px); }
+}
+
+.hero-scroll-indicator {
+  animation: scrollBounce 2s ease-in-out infinite;
+}
+
+/* ── Service cell hover ── */
+.service-cell {
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+}
+
+.service-cell::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  background: radial-gradient(ellipse at 30% 50%, rgba(192,192,192,0.06) 0%, transparent 70%);
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.service-cell:hover::before {
+  opacity: 1;
+}
+
+.service-cell:hover {
+  background: rgba(192,192,192,0.03);
+}
+
+/* ── Service number gradient ── */
+.service-num {
+  background: linear-gradient(135deg, #ffffff 40%, #9a9a9a 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Stat number gradient ── */
+.stat-number {
+  background: linear-gradient(135deg, #ffffff 30%, #888888 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── About card: dark hover lift ── */
+.about-card-dark {
+  transition: transform 0.35s cubic-bezier(0.16,1,0.3,1), box-shadow 0.35s ease;
+}
+
+.about-card-dark:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 48px rgba(0,0,0,0.35);
+}
+
+/* ── Values card: improved hover ── */
+.value-card {
+  transition: background 0.3s ease;
+}
+
+.value-card:hover {
+  background: rgba(192,192,192,0.03);
 }
 
 

@@ -18,10 +18,15 @@ export default function ProjectsSection() {
         return () => observer.disconnect()
     }, [])
 
+    let imageCount = 0
+    let videoCount = 0
     const items = Object.entries(mediaFiles).map(([path, mod]) => {
         const ext = path.split('.').pop().toLowerCase()
         const isVideo = ['mp4', 'webm', 'mov'].includes(ext)
-        return { src: mod.default, isVideo, path }
+        const alt = isVideo
+            ? `Lavanya Construction project video ${++videoCount}`
+            : `Lavanya Construction project photo ${++imageCount}`
+        return { src: mod.default, isVideo, path, alt }
     })
 
     const handleNext = (e) => {
@@ -72,10 +77,10 @@ export default function ProjectsSection() {
                         }}
                     >
                         {item.isVideo ? (
-                            <video src={item.src} muted loop autoPlay playsInline
+                            <video src={item.src} muted loop autoPlay playsInline aria-label={item.alt}
                                 style={{ width: '100%', display: 'block', borderRadius: '12px' }} />
                         ) : (
-                            <img src={item.src} alt="" loading="lazy"
+                            <img src={item.src} alt={item.alt} loading="lazy"
                                 style={{ width: '100%', display: 'block', borderRadius: '12px' }} />
                         )}
                     </div>
@@ -117,9 +122,10 @@ export default function ProjectsSection() {
                     <div onClick={(e) => e.stopPropagation()} style={{ maxWidth: '90vw', maxHeight: '85vh' }}>
                         {items[selectedMediaIndex].isVideo ? (
                             <video src={items[selectedMediaIndex].src} controls autoPlay loop muted playsInline
+                                aria-label={items[selectedMediaIndex].alt}
                                 style={{ maxWidth: '100%', maxHeight: '85vh', borderRadius: '8px' }} />
                         ) : (
-                            <img src={items[selectedMediaIndex].src} alt=""
+                            <img src={items[selectedMediaIndex].src} alt={items[selectedMediaIndex].alt}
                                 style={{ maxWidth: '100%', maxHeight: '85vh', borderRadius: '8px', objectFit: 'contain' }} />
                         )}
                     </div>

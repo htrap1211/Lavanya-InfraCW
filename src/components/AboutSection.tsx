@@ -36,7 +36,7 @@ export default function AboutSection() {
 
                 <div className="about-cards">
                     {/* Mission card — dark with gradient shimmer */}
-                    <div className="fade-in-up" style={{
+                    <div className="fade-in-up about-card-dark" style={{
                         marginTop: '36px', borderRadius: '16px', padding: '32px 28px',
                         background: 'linear-gradient(135deg, #161616 0%, #111111 60%, #1a1a1a 100%)',
                         position: 'relative', overflow: 'hidden',

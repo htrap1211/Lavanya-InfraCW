@@ -19,18 +19,19 @@ export default function HeroSection() {
                 backgroundColor: '#111111',
             }}
         >
-            {/* Background image */}
+            {/* Background image with Ken Burns */}
             <img
                 src={heroImg}
-                alt="Construction"
-                loading="lazy"
+                alt="Construction site"
+                className="hero-bg-img"
                 style={{
                     position: 'absolute',
                     inset: 0,
                     width: '100%',
                     height: '100%',
                     objectFit: 'cover',
-                    opacity: 0.45,
+                    opacity: 0.42,
+                    transformOrigin: 'center center',
                 }}
             />
 
@@ -128,6 +129,19 @@ export default function HeroSection() {
                 >
                     See Our Work ↓
                 </button>
+
+                {/* Scroll indicator */}
+                <div className="hero-scroll-indicator" style={{
+                    marginTop: '40px',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    alignItems: 'center',
+                    gap: '5px',
+                    cursor: 'pointer',
+                }} onClick={handleScrollToProjects}>
+                    <div style={{ width: '1px', height: '36px', background: 'linear-gradient(180deg, transparent, rgba(192,192,192,0.5))' }} />
+                    <div style={{ width: '5px', height: '5px', borderRadius: '50%', background: 'rgba(192,192,192,0.6)' }} />
+                </div>
             </div>
 
             {/* Trust strip */}

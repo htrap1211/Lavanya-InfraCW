@@ -36,85 +36,148 @@
   <!-- Preload fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <!-- JSON-LD Structured Data: LocalBusiness -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "@id": "https://lavanyaconstruction.com/",
+    "name": "Lavanya Construction",
+    "description": "40+ years of construction excellence. Residential, Commercial, Industrial & Infrastructure projects across Maharashtra, India.",
+    "url": "https://lavanyaconstruction.com/",
+    "telephone": ["+918847774100", "+917887774100"],
+    "email": "chavanajay4100@gmail.com",
+    "foundingDate": "1984",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Tejas Society, Near Anthony Church, Katrang",
+      "addressLocality": "Khopoli",
+      "addressRegion": "Maharashtra",
+      "postalCode": "410203",
+      "addressCountry": "IN"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 18.825633644026367,
+      "longitude": 73.34241776510656
+    },
+    "openingHours": "Mo-Sa 09:00-18:00",
+    "sameAs": [],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Construction Services",
+      "itemListElement": [
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Residential Construction" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Commercial Projects" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Industrial Facilities" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Infrastructure Development" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Interior Fit-Outs" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Project Management" } }
+      ]
+    }
+  }
+  </script>
+
+  <!-- Google Analytics 4 — replace G-XXXXXXXXXX with your Measurement ID -->
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script> -->
 </head>
 
 <body>
   <!-- Preloader -->
-  <div id="preloader"
-    style="position:fixed;inset:0;z-index:9999;background:#0a0a0a;display:flex;align-items:center;justify-content:center;transition:opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1);overflow:hidden;">
-    <div style="text-align:center; position:relative;">
-      <!-- Architectural Line -->
-      <div
-        style="position:relative; z-index:1; display: flex; flex-direction: column; align-items: center; justify-content: center;">
-        <div
-          style="font-family:'DM Serif Display', serif; font-size:48px; color:#ffffff; white-space: nowrap; margin-bottom: -15px; clip-path: inset(0 0 0 0); animation: slide-up-reveal 1.5s cubic-bezier(0.19, 1, 0.22, 1) 0.8s both;">
-          LAVANYA
-        </div>
-        <div
-          style="width: 0; height: 1px; background: #ffffff; animation: line-grow 0.6s cubic-bezier(0.19, 1, 0.22, 1) forwards, line-split 0.8s cubic-bezier(0.19, 1, 0.22, 1) 0.8s both;">
-        </div>
-        <div
-          style="font-family:'DM Sans', sans-serif; font-size:11px; color:rgba(255,255,255,0.7); margin-top: 15px; letter-spacing: 0.8em; opacity: 0; animation: slide-down-reveal 1.5s cubic-bezier(0.19, 1, 0.22, 1) 0.8s both;">
-          INFRASTRUCTURE
-        </div>
+  <div id="preloader" style="position:fixed;inset:0;z-index:9999;background:#070707;display:flex;align-items:center;justify-content:center;transition:opacity 0.9s cubic-bezier(0.16,1,0.3,1);overflow:hidden;">
+
+    <!-- Radial glow -->
+    <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 50% 50%,rgba(192,192,192,0.05) 0%,transparent 65%);pointer-events:none;"></div>
+
+    <!-- Corner brackets -->
+    <div style="position:absolute;top:28px;left:28px;width:30px;height:30px;border-top:1px solid rgba(192,192,192,0.4);border-left:1px solid rgba(192,192,192,0.4);opacity:0;animation:pl-corner 0.5s ease 0.1s forwards;"></div>
+    <div style="position:absolute;top:28px;right:28px;width:30px;height:30px;border-top:1px solid rgba(192,192,192,0.4);border-right:1px solid rgba(192,192,192,0.4);opacity:0;animation:pl-corner 0.5s ease 0.2s forwards;"></div>
+    <div style="position:absolute;bottom:28px;left:28px;width:30px;height:30px;border-bottom:1px solid rgba(192,192,192,0.4);border-left:1px solid rgba(192,192,192,0.4);opacity:0;animation:pl-corner 0.5s ease 0.3s forwards;"></div>
+    <div style="position:absolute;bottom:28px;right:28px;width:30px;height:30px;border-bottom:1px solid rgba(192,192,192,0.4);border-right:1px solid rgba(192,192,192,0.4);opacity:0;animation:pl-corner 0.5s ease 0.4s forwards;"></div>
+
+    <!-- Centre content -->
+    <div style="text-align:center;position:relative;">
+
+      <!-- LAVANYA — letter by letter -->
+      <div style="display:flex;justify-content:center;gap:0px;margin-bottom:2px;">
+        <span style="font-family:'DM Serif Display',serif;font-size:56px;color:#fff;display:inline-block;line-height:1;letter-spacing:0.06em;animation:pl-letter 0.65s cubic-bezier(0.16,1,0.3,1) 0.30s both;">L</span>
+        <span style="font-family:'DM Serif Display',serif;font-size:56px;color:#fff;display:inline-block;line-height:1;letter-spacing:0.06em;animation:pl-letter 0.65s cubic-bezier(0.16,1,0.3,1) 0.43s both;">A</span>
+        <span style="font-family:'DM Serif Display',serif;font-size:56px;color:#fff;display:inline-block;line-height:1;letter-spacing:0.06em;animation:pl-letter 0.65s cubic-bezier(0.16,1,0.3,1) 0.56s both;">V</span>
+        <span style="font-family:'DM Serif Display',serif;font-size:56px;color:#fff;display:inline-block;line-height:1;letter-spacing:0.06em;animation:pl-letter 0.65s cubic-bezier(0.16,1,0.3,1) 0.69s both;">A</span>
+        <span style="font-family:'DM Serif Display',serif;font-size:56px;color:#fff;display:inline-block;line-height:1;letter-spacing:0.06em;animation:pl-letter 0.65s cubic-bezier(0.16,1,0.3,1) 0.82s both;">N</span>
+        <span style="font-family:'DM Serif Display',serif;font-size:56px;color:#fff;display:inline-block;line-height:1;letter-spacing:0.06em;animation:pl-letter 0.65s cubic-bezier(0.16,1,0.3,1) 0.95s both;">Y</span>
+        <span style="font-family:'DM Serif Display',serif;font-size:56px;color:#fff;display:inline-block;line-height:1;letter-spacing:0.06em;animation:pl-letter 0.65s cubic-bezier(0.16,1,0.3,1) 1.08s both;">A</span>
       </div>
+
+      <!-- Divider line -->
+      <div style="height:1px;background:linear-gradient(90deg,transparent,rgba(192,192,192,0.55),transparent);margin:14px 0;transform:scaleX(0);transform-origin:center;animation:pl-line 0.55s cubic-bezier(0.16,1,0.3,1) 1.5s both;"></div>
+
+      <!-- INFRASTRUCTURE -->
+      <div style="font-family:'DM Sans',sans-serif;font-size:9px;letter-spacing:0.72em;color:rgba(255,255,255,0.38);text-transform:uppercase;opacity:0;animation:pl-sub 0.9s ease 1.85s both;">INFRASTRUCTURE</div>
+    </div>
+
+    <!-- Counter — bottom left -->
+    <div style="position:absolute;bottom:44px;left:36px;opacity:0;animation:pl-corner 0.4s ease 0.7s forwards;">
+      <span id="pl-count" style="font-family:'DM Serif Display',serif;font-size:34px;color:#ffffff;display:block;line-height:1;">00</span>
+      <span style="font-family:'DM Sans',sans-serif;font-size:8px;letter-spacing:0.18em;color:rgba(192,192,192,0.35);display:block;margin-top:4px;text-transform:uppercase;">Loading</span>
+    </div>
+
+    <!-- Year — bottom right -->
+    <div style="position:absolute;bottom:44px;right:36px;opacity:0;animation:pl-corner 0.4s ease 0.7s forwards;text-align:right;">
+      <span style="font-family:'DM Sans',sans-serif;font-size:8px;letter-spacing:0.18em;color:rgba(192,192,192,0.35);display:block;text-transform:uppercase;">Est.</span>
+      <span style="font-family:'DM Serif Display',serif;font-size:22px;color:rgba(255,255,255,0.2);display:block;line-height:1.2;">1984</span>
+    </div>
+
+    <!-- Progress bar -->
+    <div style="position:absolute;bottom:0;left:0;right:0;height:2px;background:rgba(255,255,255,0.04);">
+      <div id="pl-bar" style="height:100%;width:0;background:linear-gradient(90deg,transparent 0%,rgba(192,192,192,0.5) 50%,rgba(255,255,255,0.9) 100%);transition:width 0.08s linear;"></div>
     </div>
   </div>
+
+  <script>
+    ;(function () {
+      var n = 0;
+      var el = document.getElementById('pl-count');
+      var bar = document.getElementById('pl-bar');
+      function tick() {
+        if (n >= 100) return;
+        var step = Math.ceil(Math.random() * 3 + (n < 40 ? 1 : n < 75 ? 2 : 3));
+        n = Math.min(n + step, 100);
+        if (el) el.textContent = n < 10 ? '0' + n : '' + n;
+        if (bar) bar.style.width = n + '%';
+        if (n < 100) setTimeout(tick, 22 + Math.random() * 28);
+      }
+      setTimeout(tick, 650);
+    })();
+  </script>
+
   <style>
-    @keyframes line-grow {
-      0% {
-        width: 0;
-        opacity: 0;
-      }
-
-      100% {
-        width: 280px;
-        opacity: 1;
-      }
+    @keyframes pl-corner {
+      from { opacity: 0; transform: scale(0.88); }
+      to   { opacity: 1; transform: scale(1); }
     }
-
-    @keyframes line-split {
-      0% {
-        transform: scaleY(1);
-        opacity: 1;
-      }
-
-      100% {
-        transform: scaleY(0.1);
-        opacity: 0.3;
-      }
+    @keyframes pl-letter {
+      from { opacity: 0; transform: translateY(40%) scale(0.92); filter: blur(6px); }
+      to   { opacity: 1; transform: translateY(0)   scale(1);    filter: blur(0); }
     }
-
-    @keyframes slide-up-reveal {
-      0% {
-        transform: translateY(100%);
-        opacity: 0;
-        filter: brightness(0);
-      }
-
-      100% {
-        transform: translateY(0);
-        opacity: 1;
-        filter: brightness(1);
-      }
+    @keyframes pl-line {
+      from { transform: scaleX(0); opacity: 0; }
+      to   { transform: scaleX(1); opacity: 1; }
     }
-
-    @keyframes slide-down-reveal {
-      0% {
-        transform: translateY(-100%);
-        opacity: 0;
-        letter-spacing: 0.2em;
-      }
-
-      100% {
-        transform: translateY(0);
-        opacity: 1;
-        letter-spacing: 0.8em;
-      }
+    @keyframes pl-sub {
+      from { opacity: 0; letter-spacing: 0.25em; }
+      to   { opacity: 1; letter-spacing: 0.72em; }
     }
   </style>
   <div id="root"></div>
-  <script type="module" src="/src/main.jsx"></script>
+  <script type="module" src="/src/main.tsx"></script>
 </body>
 
 </html>

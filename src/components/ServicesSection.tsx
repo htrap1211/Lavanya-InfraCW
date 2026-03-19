@@ -71,23 +71,18 @@ export default function ServicesSection() {
                         <div
                             key={s.num}
                             ref={(el) => (rowRefs.current[i] = el)}
-                            className="fade-in-up"
+                            className="fade-in-up service-cell"
                             style={{
                                 padding: '32px 16px',
                                 borderRight: isRight ? 'none' : '1px solid rgba(192,192,192,0.10)',
                                 borderBottom: isBottom ? 'none' : '1px solid rgba(192,192,192,0.10)',
                             }}
                         >
-                            <div style={{
+                            <div className="service-num" style={{
                                 fontFamily: '"DM Serif Display", serif',
                                 fontSize: '32px',
                                 lineHeight: 1,
                                 marginBottom: '12px',
-                                color: '#ffffff',
-                                background: 'linear-gradient(135deg, #ffffff 40%, #9a9a9a 100%)',
-                                WebkitBackgroundClip: 'text',
-                                WebkitTextFillColor: 'transparent',
-                                backgroundClip: 'text',
                             }}>
                                 {s.num}
                             </div>

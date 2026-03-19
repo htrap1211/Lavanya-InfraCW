@@ -21,6 +21,12 @@ export default function Navbar() {
     }, [])
 
     useEffect(() => {
+        const onKeyDown = (e) => { if (e.key === 'Escape') setMenuOpen(false) }
+        window.addEventListener('keydown', onKeyDown)
+        return () => window.removeEventListener('keydown', onKeyDown)
+    }, [])
+
+    useEffect(() => {
         const sections = document.querySelectorAll('section[id]')
         const observer = new IntersectionObserver(
             (entries) => entries.forEach((e) => { if (e.isIntersecting) setActiveSection(e.target.id) }),

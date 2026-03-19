@@ -1,3 +1,4 @@
+import ErrorBoundary from './components/ErrorBoundary'
 import Navbar from './components/Navbar'
 import HeroSection from './components/HeroSection'
 import StatsSection from './components/StatsSection'
@@ -12,7 +13,7 @@ import WhatsAppFAB from './components/WhatsAppFAB'
 
 function App() {
   return (
-    <>
+    <ErrorBoundary>
       <Navbar />
       <HeroSection />
       <StatsSection />
@@ -24,7 +25,7 @@ function App() {
       <ContactSection />
       <Footer />
       <WhatsAppFAB />
-    </>
+    </ErrorBoundary>
   )
 }
 
